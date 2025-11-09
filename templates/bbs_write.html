@@ -1,0 +1,57 @@
+{% extends "base.html" %} {% block title %}{{Home}}{% endblock%} {% block
+content %}
+<div class="bbs">
+  <h3>post</h3>
+</div>
+<div class="bbs-nav">
+  <a href="/bbs">
+    <button type="button" class="btn btn-secondary">cancel</button>
+  </a>
+</div>
+<div class="bbs-write">
+  <form action="/post" method="POST" class="was-validated">
+    <div class="label" style="width: 100%">
+      <label for="title">Title:</label>
+      <input
+        type="text"
+        class="input"
+        name="title"
+        id="title"
+        placeholder="Enter title"
+        style="display: block; width: 100%"
+        required
+      />
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out title field.</div>
+    </div>
+    <div class="label">
+      <label for="writer">Writer:</label>
+      <input
+        type="text"
+        class="input"
+        name="writer"
+        id="writer"
+        placeholder="Enter writer"
+        style="display: block; width: 100%"
+        required
+      />
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out writer field.</div>
+    </div>
+    <div class="label">
+      <label for="content">Content:</label>
+      <textarea
+        rows="5"
+        class="input"
+        name="content"
+        id="content"
+        style="display: block; width: 100%"
+        required
+      ></textarea>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out content field.</div>
+    </div>
+    <button type="submit" class="btn btn-secondary">Submit</button>
+  </form>
+</div>
+{% endblock %}

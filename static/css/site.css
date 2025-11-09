@@ -6,3 +6,38 @@ body {
 a {
   text-decoration: none;
 }
+
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.btn {
+  width: 100px;
+}
+.bbs {
+  padding-top: 1em;
+}
+.bbs-nav {
+  width: 1200px;
+  margin: auto;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  gap: 1em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-title {
+  width: 250px;
+}
+.bbs-write {
+  width: 1200px;
+}
+
+.label {
+  text-align: left;
+}
+.input {
+  margin-bottom: 1em;
+}
