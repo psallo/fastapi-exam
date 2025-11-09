@@ -24,3 +24,15 @@ def post(data):
   con.commit()
   con.close()
   return "success"
+
+def get_id(title):
+  con = my.connect(host='localhost', port=3306, user='root' , password='1234', database='shop', cursorclass=DictCursor)
+  cursor = con.cursor()
+
+  sql = "SELECT title, content, writer, date FROM bbs WHERE title = %s"
+  cursor.execute(sql, title)
+
+  row = cursor.fetchone()
+  print(row)
+  con.close()
+  return row

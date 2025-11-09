@@ -21,7 +21,7 @@ def bbs(request: Request):
   rows = db.get_list()
   print(rows)
   data = {"request" : request, "rows" : rows}
-  return templates.TemplateResponse("bbs.html", data)
+  return templates.TemplateResponse("bbs_list.html", data)
 
 @app.get("/write")
 def write(request: Request):
@@ -36,3 +36,10 @@ def post(request: Request,
   print(data)
   db.post(data)
   return RedirectResponse(url="/bbs", status_code=303)
+
+@app.get("/bbs/{title}")
+def get_id(request: Request, title):
+  row = db.get_id(title)
+  data = {"request" : request, "row" : row}
+  print(data)
+  return templates.TemplateResponse("bbs.html", data)

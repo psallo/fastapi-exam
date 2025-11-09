@@ -1,38 +1,16 @@
-{% extends "base.html" %} {% block title %}{{Home}}{% endblock%} {% block
-content %}
+{% extends "base.html" %} {% block title %}Board{% endblock%} {% block content
+%}
 <div class="bbs">
   <h3>Board</h3>
 </div>
 <div class="bbs-nav">
-    <input
-      class="search-title"
-      type="text"
-      width="200px"
-      class="form-control form-control-sm"
-      placeholder="Title"
-    />
-    <button type="button" class="btn btn-secondary">search</button>
-    <a href="/write"><button type="button" class="btn btn-secondary">write</button></a>
+  <a href="/bbs">
+    <button type="button" class="btn btn-secondary">list</button>
+  </a>
 </div>
-<div class="get_list">
-  <table>
-    <thead style="border-bottom: 1px solid #ccc;">
-      <td style="width: 100px; font-size: 1.3em; font-weight: bold; text-align: center">No.</td>
-      <td style="width: 250px; font-size: 1.3em; font-weight: bold; text-align: center">Title</td>
-      <td style="width: 150px; font-size: 1.3em; font-weight: bold; text-align: center">Writer</td>
-      <td style="width: 200px; font-size: 1.3em; font-weight: bold; text-align: center">Date</td>
-    </thead>
-    <tbody>
-      {% for row in rows %}
-      <tr style="border-bottom: 0.1px solid #ccc">
-        <td style="text-align: center; padding: 0.5em 0.5em;">{{row.id}}</td>
-        <td style="text-align: center; padding: 0.5em 0.5em;">{{row.title}}</td>
-        <td style="text-align: center; padding: 0.5em 0.5em;">{{row.writer}}</td>
-        <td style="text-align: center; padding: 0.5em 0.5em;">{{row.date}}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+<div class="get_id">
+  <h2 class="mt-5">{{row.title}}</h2>
+  <h5>{{row.writer}}, {{row.date}}</h5>
+  <p>{{row.content}}</p>
 </div>
 {% endblock %}
-</div>
